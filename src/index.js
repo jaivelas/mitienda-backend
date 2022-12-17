@@ -12,7 +12,7 @@ app.use(express.json()) // definimos que vamos a usar el formato json
 
 // definimos rutas.
 app.use("/",require("./routers/rtrProducto"));
-//app.use("/",require("./routers/rtrCategoria"));
+app.use("/",require("./routers/rtrCategoria"));
 
 app.listen(PORT, (req,res) =>{   // Inicio la escucha y respuesta en el puerto
     console.log("servidor en linea en el puerto: ",PORT)
