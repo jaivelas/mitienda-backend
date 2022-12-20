@@ -3,7 +3,8 @@ const router = express.Router();
 const ctrCategoria = require("../controllers/ctrCategoria");
 
 //create
-router.post("/categoria", ctrCategoria).guardar;
+//router.post("/categoria", ctrCategoria.guardar);
+router.get("/categoria", ctrCategoria.listar);
 /* 
 router.get("/categoria", ctrCategoria.listar); // Read - buscar todo
 router.get("/categoria/id/:id", ctrCategoria.buscarId); // Read - buscar por id

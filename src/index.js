@@ -1,10 +1,11 @@
+require('dotenv').config();
 require("./database");              // DEFINLE LA CONEXION ALA BASE DE DATOS
 const express = require ("express"); // cargamos la libreria express y al llamamos express.
 const app = express(); // asigno el nombre app framework para facilitar el manejo
 const cors = require("cors");   // carlo el CORS
 const PORT = 5000;  // asignamos un puerto para escuchar
 //const producto = require("./models/producto");  // se puso provisional para verificar la coenxion a la Base de datos
-const categoria = require("./models/categoria");
+//const categoria = require("./models/categoria");
 
 // Configuraciones para trabajar peticiones HTTP post, get, delete, put
 app.use(cors()),        //definimos que vamos a usar cors
