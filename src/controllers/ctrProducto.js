@@ -15,7 +15,7 @@ ctrProducto.listar = async (req,res) => {
     .find()
     .then(data => res.json(data))
     .catch(err => res.json(err))
-    console.log("entro por listar Producto")
+    //console.log("entro por listar Producto")
 }
 
 // Funcion Buscar por ID CRUD - READ
@@ -33,7 +33,7 @@ ctrProducto.buscarNombre = async (req,res) => {
     // el i es para que ignore mayusculas y minusculas
     .then(data => res.json(data))
     .catch(err => res.json(err))
-    console.log("entro por NOMBRE")
+    //console.log("entro por NOMBRE producto")
 }
 
 // Funcion actualizar CRUD - Update

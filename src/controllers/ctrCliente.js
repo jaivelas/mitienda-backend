@@ -1,56 +1,56 @@
-const ctrCategoria = {};
-const categoria = require("../models/categoria");
+const ctrCliente = {};
+const cliente = require("../models/cliente");
 
 // Funcion CRUD - POST
-ctrCategoria.guardar = async(req, res) => {
-    await categoria
+ctrCliente.guardar = async(req, res) => {
+    await cliente
     .create(req.body)
     .then(data => res.json(data))
     .catch(err => res.json(err))
 }
 
-// Funcion CRUD - GET
-ctrCategoria.listar = async (req,res) => {
-    await categoria
+// Funcion CRUD - READ
+ctrCliente.listar = async (req,res) => {
+    await cliente
     .find()
     .then(data => res.json(data))
     .catch(err => res.json(err))
-    //console.log("entro por listar categoria")
+    //console.log("entro por listar cliente")
 }
 
 // Funcion Buscar por ID CRUD - READ
-ctrCategoria.buscarId = async (req,res) => {
-    await categoria
+ctrCliente.buscarId = async (req,res) => {
+    await cliente
     .findById(req.params.id)
     .then(data => res.json(data))
     .catch(err => res.json(err))
 }
 
 // Funcion Buscar por caracter (nombre) CRUD - READ
-ctrCategoria.buscarNombre = async (req,res) => {
-    await categoria
+ctrCliente.buscarNombre = async (req,res) => {
+    await cliente
     .find({nombre : RegExp(req.params.nom,"i")})  // el primero debe coinsidir con la definicion de la DB
     // el i es para que ignore mayusculas y minusculas
     .then(data => res.json(data))
     .catch(err => res.json(err))
-    //console.log("entro por NOMBRE Categoria")
+    //console.log("entro por NOMBRE Cliente")
 }
 
-// Funcion PUT CRUD - Update
-ctrCategoria.actualizar = async (req,res) => {
+// Funcion actualizar CRUD - Update
+ctrCliente.actualizar = async (req,res) => {
     const { _id, ...body } = req.body;   // saque el id, y el resto mandelo a body
-    await categoria
+    await cliente
     .updateOne({_id : _id}, {$set : body})
     .then(data => res.json(data))
     .catch(err => res.json(err))
 }
 
 // Funcion Borrar CRUD - Delete
-ctrCategoria.eliminar = async (req,res) => {
-    await categoria
+ctrCliente.eliminar = async (req,res) => {
+    await cliente
     .deleteOne({_id:req.params.id}) // el _id es el nombre del parametro id que pone mongoose
     .then(data => res.json(data))
     .catch(err => res.json(err))
 }
 
-module.exports = ctrCategoria
+module.exports = ctrCliente;

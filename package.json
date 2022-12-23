@@ -4,7 +4,7 @@
   "description": "bakend2 / gestion de ventas en linea Martha Martha",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon  src/index.js"
+    "start": "node src/index.js"
   },
   "keywords": [
     "ventas",

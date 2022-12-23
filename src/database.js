@@ -1,7 +1,8 @@
 const mongoose = require("mongoose");
 
+
 mongoose
-    //.connect("mongodb+srv://jaivelasjev:jaime2022@cluster0.en6v9mz.mongodb.net/mitienda?retryWrites=true&w=majority")
+    //.connect("mongodb+srv://jaivelasjev:<password>@cluster0.en6v9mz.mongodb.net/mitienda?retryWrites=true&w=majority")
     // la cadena de conexion a la base de datos
     .connect(process.env.MONGODB_URI)  // para ocultar la cadena de conexion. 
     // y la cadena se lleva ala carpeta .env como MONGODB_URI   
